@@ -35,3 +35,61 @@ code {
 .right {
   font-size: 1.5rem;
 }
+
+.basket {
+  position: fixed;
+  bottom: 2rem;
+  right: 3rem;
+
+  cursor: pointer;
+  z-index: 3;
+  padding: 0.7rem;
+}
+
+.basket-quantity {
+  font-size: 0.8rem;
+}
+
+.orders {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background-color: aliceblue;
+  width: 40rem;
+  max-width: 90%;
+
+  animation: show 500ms ease-in-out;
+}
+
+.basket-close {
+  cursor: pointer;
+  position: absolute;
+  top: 0.5rem;
+  right: 1.35rem;
+  color: rgb(193, 0, 0);
+}
+
+.delete-order{
+  cursor: pointer;
+}
+
+@media (min-width: 767px){
+  .basket {
+    top: 6.5rem;
+    bottom: unset;
+  }
+}
+
+
+@keyframes show {
+    from {
+      top: 75%;
+      opacity: 0;
+    }
+    to{
+      top: 50%;
+      opacity: 1;
+    }
+}
