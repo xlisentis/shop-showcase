@@ -5,13 +5,29 @@ function Order(props) {
         price,
         quantity,
         removeOrder = Function.prototype,
+        incQuantity = Function.prototype,
+        decQuantity = Function.prototype,
     } = props;
     return (
         <li className='collection-item'>
-            {displayName} x{quantity} = {price.finalPrice * quantity} $
-            <span class='secondary-content'>
+            {displayName}{' '}
+            <i
+                class='material-icons order-quantity'
+                onClick={() => decQuantity(mainId)}
+            >
+                remove
+            </i>
+            x{quantity}{' '}
+            <i
+                className='material-icons order-quantity'
+                onClick={() => incQuantity(mainId)}
+            >
+                add
+            </i>{' '}
+            = {price.finalPrice * quantity} $
+            <span className='secondary-content'>
                 <i
-                    class='material-icons delete-order'
+                    className='material-icons delete-order'
                     onClick={() => removeOrder(mainId)}
                 >
                     clear

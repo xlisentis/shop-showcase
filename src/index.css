@@ -75,6 +75,12 @@ code {
   cursor: pointer;
 }
 
+.order-quantity{
+  cursor: pointer;
+  vertical-align: middle;
+  color: #26a69a;
+}
+
 @media (min-width: 767px){
   .basket {
     top: 6.5rem;

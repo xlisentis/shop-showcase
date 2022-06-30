@@ -41,6 +41,34 @@ function Shop() {
         setOrders(orders.filter((el) => el.mainId !== id));
     };
 
+    const incQuantity = (id) => {
+        const newOrders = orders.map((el) => {
+            if (el.mainId === id) {
+                return {
+                    ...el,
+                    quantity: el.quantity + 1,
+                };
+            } else {
+                return el;
+            }
+        });
+        setOrders(newOrders);
+    };
+
+    const decQuantity = (id) => {
+        const newOrders = orders.map((el) => {
+            if (el.mainId === id) {
+                return {
+                    ...el,
+                    quantity: el.quantity >= 1 ? el.quantity - 1 : 0,
+                };
+            } else {
+                return el;
+            }
+        });
+        setOrders(newOrders);
+    };
+
     const handleBasketShow = () => {
         setBasketShow(!isBasketShow);
     };
@@ -74,6 +102,8 @@ function Shop() {
                     orders={orders}
                     handleBasketShow={handleBasketShow}
                     removeOrder={removeOrder}
+                    incQuantity={incQuantity}
+                    decQuantity={decQuantity}
                 />
             )}
         </main>
