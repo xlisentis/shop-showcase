@@ -1,13 +1,11 @@
+import { ShopContext } from '../context/context';
+import { useContext } from 'react';
+
 function Order(props) {
-    const {
-        mainId,
-        displayName,
-        price,
-        quantity,
-        removeOrder = Function.prototype,
-        incQuantity = Function.prototype,
-        decQuantity = Function.prototype,
-    } = props;
+    const { mainId, displayName, price, quantity } = props;
+
+    const { removeOrder, incQuantity, decQuantity } = useContext(ShopContext);
+
     return (
         <li className='collection-item'>
             {displayName}{' '}
